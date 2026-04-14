@@ -2,47 +2,153 @@
 <html>
 <head>
     <title>Biodata Kezya</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #eef5f1;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3a5a40;
+            margin-top: 40px;
+            transition: 0.3s;
+        }
+
+        h1:hover {
+            letter-spacing: 2px;
+        }
+
+        .container {
+            width: 65%;
+            margin: auto;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-left: 6px solid #a3b18a;
+
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .section:active {
+            transform: scale(0.99);
+        }
+
+        h2 {
+            color: #588157;
+            transition: 0.3s;
+        }
+
+        h2:hover {
+            color: #3a5a40;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .highlight {
+            color: #3a5a40;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
-<body style="background-color:#e8f5e9; font-family:Arial;">
+<body>
 
-    <center>
-        <h1 style="color:#2e7d32;">BIODATA DIRI</h1>
-    </center>
+    <h1>🌿 Biodata Diri Kezya</h1>
 
-    <div style="background-color:white; width:70%; margin:auto; padding:20px; border-radius:10px; box-shadow:0px 0px 10px lightgray;">
+    <div class="container">
 
-        <h2 style="color:#388e3c;">Tentang Saya</h2>
-        <p style="font-size:16px; line-height:1.6;">
-            Halo, perkenalkan nama saya Kezya Intan Devi Simamora. Saat ini saya adalah
-            mahasiswi di Universitas Negeri Medan jurusan Bisnis Digital.
-        </p>
+        <div class="section">
+            <h2>🌼 Tentang Saya</h2>
+            <p>
+                Halo, perkenalkan nama saya <span class="highlight">Kezya Intan Devi Simamora</span>, 
+                lahir di Bandung pada 30 Juli 2005. Saat ini saya merupakan mahasiswi di 
+                Universitas Negeri Medan, jurusan Manajemen dengan program studi Bisnis Digital.
+            </p>
 
-        <p style="font-size:16px; line-height:1.6;">
-            Saya orangnya suka belajar hal-hal baru, terutama yang berkaitan dengan
-            teknologi dan dunia digital. Saya juga tertarik melihat bagaimana bisnis
-            berkembang melalui internet dan platform digital.
-        </p>
+            <p>
+                Saya adalah pribadi yang cukup kreatif dan senang melakukan berbagai kegiatan seperti 
+                merajut, baking, dan menggambar 🧵🍰🎨. Saya menikmati proses membuat sesuatu secara langsung 
+                dan memperhatikan detail dalam setiap hasil yang saya buat.
+            </p>
+        </div>
 
-        <hr>
+        <div class="section">
+            <h2>🌱 Pengalaman & Minat</h2>
+            <p>
+                Saya memiliki ketertarikan dalam mempelajari cara menjual dan mempromosikan produk secara digital 💻.
+                Ketertarikan ini sudah mulai saya kembangkan sejak kecil melalui pengalaman berjualan online.
+            </p>
 
-        <h2 style="color:#388e3c;">Alasan Memilih Jurusan</h2>
-        <p style="font-size:16px; line-height:1.6;">
-            Saya memilih jurusan Bisnis Digital karena melihat perkembangan teknologi
-            yang semakin pesat dan punya pengaruh besar dalam dunia bisnis saat ini.
-        </p>
+            <p>
+                Selain itu, saya juga pernah mengikuti organisasi dan menjadi bagian dari divisi PDD, 
+                yang membantu saya memahami pembuatan konten serta kerja sama dalam tim 🤝.
+            </p>
+        </div>
 
-        <p style="font-size:16px; line-height:1.6;">
-            Saya ingin memahami bagaimana cara menggabungkan bisnis dan teknologi,
-            supaya ke depannya bisa punya peluang kerja yang luas atau bahkan
-            membangun usaha sendiri.
-        </p>
+        <div class="section">
+            <h2>🌿 Alasan Memilih Jurusan</h2>
+            <p>
+                Saya memilih jurusan Bisnis Digital karena ingin memahami strategi pemasaran, 
+                pengembangan brand, serta bagaimana mengelola bisnis di era digital.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>✨ Tujuan ke Depan</h2>
+            <p>
+                Ke depannya, saya ingin mengembangkan kemampuan dalam memasarkan produk secara digital 
+                serta menjadi pribadi yang lebih konsisten dan teliti.
+            </p>
+
+            <p>
+                Saya juga memiliki cita-cita untuk membangun usaha sendiri di bidang produk kreatif atau handmade 🌸, 
+                yang memiliki nilai keunikan dan dapat berkembang secara berkelanjutan.
+            </p>
+        </div>
 
     </div>
 
-    <center>
-        <p style="color:#555; margin-top:20px;"><i>Terima kasih sudah membaca 🌿</i></p>
-    </center>
+    <script>
+        const sections = document.querySelectorAll(".section");
+
+        function showOnScroll() {
+            const triggerBottom = window.innerHeight * 0.85;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+
+                if (sectionTop < triggerBottom) {
+                    section.classList.add("show");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", showOnScroll);
+        showOnScroll();
+    </script>
 
 </body>
 </html>
